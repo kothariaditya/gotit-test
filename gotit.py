@@ -36,7 +36,7 @@ plt.suptitle('Daily Cycles', fontsize = 14, fontweight='bold')
 plt.xlabel('Hour')
 plt.ylabel('Number of Timestamps')
 plt.show()
-for counter in range(1,13):
+for counter in range(1,13): #this prints for all months in the year. However, only July-Dec have values.
 	month_num = {key[1]: val for key, val in monthly.items() if key[0] == counter}
 	plt.bar(range(len(month_num)), month_num.values(), align = 'center')
 	plt.xticks(range(len(month_num)), range(24))
@@ -55,12 +55,14 @@ for counter in range(1,13):
 	elif counter == 12:
 		plt.suptitle('December Cycles', fontsize = 14, fontweight='bold')	
 	plt.show()
+# Now we are investigating the high no. of requests	at 4PM in December
 plt.bar(range(len(december)), december.values(), align='center')
 plt.xticks(range(len(december)), december.keys())
 plt.suptitle('December daily frequencies', fontsize = 14, fontweight='bold')
 plt.xlabel('Day')
 plt.ylabel('Number of Timestamps')
 plt.show()
+# Now we are investigating the high no. of requests	at 4PM on December 31st (New Year's Eve)
 plt.bar(range(len(nye)), nye.values(), align='center')
 plt.xticks(range(len(nye)), nye.keys())
 plt.suptitle('NYE Hourly Requests', fontsize = 14, fontweight='bold')
